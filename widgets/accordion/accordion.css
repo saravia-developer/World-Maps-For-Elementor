@@ -1,0 +1,41 @@
+.container-accordion > details {
+  overflow: hidden;
+}
+
+.container-accordion > details p {
+  opacity: 0;
+  max-height: 0;
+  transition: 
+    opacity 0.3s ease,
+    max-height 0.3s ease
+  ;
+  text-align: left;
+}
+
+.container-accordion > details[open] p {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+
+
+
+
+.container-accordion > details > summary {
+  padding: 5px;
+  border: 1px solid black;
+  outline: none;
+  transition: 
+    background-color 0.5s ease
+  ;
+  color: black;
+}
+
+.container-accordion > details > summary::marker, 
+.container-accordion > details > summary::-webkit-details-marker {
+  content: '';
+}
+
+.container-accordion > details > summary:hover {
+  background-color: aquamarine;
+} 

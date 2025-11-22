@@ -1,0 +1,104 @@
+:root {
+	--first-color: #0D3755;
+	--second-color: #71B571;
+	--third-color: #ffffff;
+}
+
+.container-tabs-children-page {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 20px 0px;
+}
+
+.container-tabs-children-page .element-container {
+	display: flex;
+	width: 240px;
+	margin-right: 10px;
+	cursor: pointer;
+	text-decoration: none !important;
+	background-color: var(--first-color);
+}
+
+.container-tabs-children-page .tab-brother {
+	display: flex;
+	width: 240px;
+	position: relative;
+	overflow: hidden;
+}
+
+.container-tabs-children-page .titulo {
+	background-color: var(--first-color);
+	color: var(--third-color);;
+	padding: 10px 20px 10px 50px;
+	flex-grow: 1;
+	font-family: inherit;
+	font-weight: bold;
+	text-align: start;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	margin: auto 0;
+	line-height: 20px;
+}
+
+.container-tabs-children-page .figura {
+	background-color: var(--second-color);;
+	width: 45px;
+	transition: 
+		all 0.3s ease
+	;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	color: var(--third-color);;
+	font-family: inherit;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.container-tabs-children-page .triangle {
+
+	content: "";
+	background-color: transparent;
+
+	border-top-style: solid;
+	border-top-color: var(--first-color);
+
+
+	border-right-width: 0px;
+	border-right-style: solid;
+	border-right-color: transparent;
+
+	border-bottom-style: solid;
+	border-bottom-color: var(--first-color);
+
+	border-left-style: solid;
+	border-left-color: transparent;
+}
+
+.container-tabs-children-page .tab-brother:hover .figura {
+	width: 100%;
+}
+
+.container-tabs-children-page .tab-brother:hover .titulo {
+	opacity: 0;
+}
+
+.container-tabs-children-page .texto-figura {
+	display: none;
+	white-space: nowrap;
+	padding-left: 20px;
+	text-decoration: none;
+	line-height: 20px;
+}
+
+.container-tabs-children-page .tab-brother:hover .texto-figura {
+	display: block;
+	width: 80%;
+	text-wrap: auto;
+	text-align: start;
+}

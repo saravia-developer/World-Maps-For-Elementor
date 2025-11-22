@@ -1,0 +1,20 @@
+#container-kwfe-widget-map-paraguay {
+	position: relative;
+}
+
+#kwfe-widget-map-paraguay {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	min-height: 0px;
+	padding: 0px;
+	position: relative;
+}
+
+#kwfe-widget-map-paraguay svg {
+	fill: white;
+	stroke: black;
+	width: 100vw;
+	position: relative;
+}
