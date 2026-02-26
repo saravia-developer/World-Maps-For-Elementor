@@ -2,18 +2,21 @@
 
 require_once plugin_dir_path(__FILE__) . "loader.php";
 
-class Class_Elementor_Extends {
+class Class_Elementor_Extends
+{
 
   protected $loader;
 
-  public function __construct() {
+  public function __construct()
+  {
 
     $this->loader = new Elementor_Extends_Loader();
 
     $this->load_dependencies();
   }
 
-  public function load_dependencies() {
+  public function load_dependencies()
+  {
     $this->loader->add_action('elementor/elements/categories_registered', $this, 'kwfe_add_categories_custom');
     // $this->kwfe_enqueue_styles();
     // $this->kwfe_enqueue_scripts();
@@ -21,32 +24,36 @@ class Class_Elementor_Extends {
     $this->loader->add_action('elementor/frontend/after_register_scripts', $this, 'kwfe_enqueue_styles');
 
     $this->loader->add_action('elementor/frontend/after_register_scripts', $this, 'kwfe_enqueue_scripts');
+
+    $this->loader->add_action('wp_enqueue_scripts', $this, 'kwfe_styles_main');
   }
 
-  public function kwfe_enqueue_styles() {
+  public function kwfe_enqueue_styles()
+  {
 
-    $path_widgets = PLUGIN_DIRECTORY . "widgets/"; 
+    $path_widgets = PLUGIN_DIRECTORY . "widgets/";
     $styles_files = glob($path_widgets . '*/*.css');
 
-    foreach($styles_files as $style_file) {
-      $widget_name = explode( '.cs', basename($style_file))[0];
+    foreach ($styles_files as $style_file) {
+      $widget_name = explode('.cs', basename($style_file))[0];
       $handle = "kwfe-{$widget_name}";
 
       wp_register_style(
-        $handle, 
-        plugin_dir_url( $style_file ) . basename( $style_file ), 
-        array(), 
+        $handle,
+        plugin_dir_url($style_file) . basename($style_file),
+        array(),
         filemtime($style_file)
       );
     }
   }
 
-  public function kwfe_enqueue_scripts() {
+  public function kwfe_enqueue_scripts()
+  {
 
-    $path_widgets = PLUGIN_DIRECTORY . "widgets/"; 
+    $path_widgets = PLUGIN_DIRECTORY . "widgets/";
     $js_files = glob($path_widgets . '*/js/*.js');
 
-    foreach($js_files as $file) {
+    foreach ($js_files as $file) {
       $widget_name = explode('.j', basename($file))[0];
       $handle = "kwfe-{$widget_name}";
 
@@ -62,22 +69,23 @@ class Class_Elementor_Extends {
     }
   }
 
-  public function kwfe_add_categories_custom( $elements_manager ) {
+  public function kwfe_add_categories_custom($elements_manager)
+  {
     require_once PLUGIN_DIRECTORY . "includes/widget_categories.php";
 
     add_categories_in_elementor(
-      $elements_manager, 
+      $elements_manager,
       [
         [
           "name-category" => 'custom-widgets',
-          "options" =>  [
+          "options" => [
             'title' => esc_html__('Custom Widget', 'textdomain'),
             'icon' => 'fa fa-plug'
           ]
         ],
         [
           "name-category" => 'world-maps',
-          "options" =>  [
+          "options" => [
             'title' => esc_html__('World Maps', 'textdomain'),
             'icon' => 'fa fa-maps'
           ]
@@ -86,7 +94,30 @@ class Class_Elementor_Extends {
     );
   }
 
-  public function run() {
+  public function kwfe_styles_main()
+  {
+    $name = 'kwfe_styles_main';
+    $file_name = 'world-maps-for-elementor.css';
+    $url = $file_name;
+    $path = PLUGIN_DIRECTORY . $file_name;
+    $version = filemtime($path) ?? '1.0.0';
+    $deps = [];
+    $args = [];
+
+    wp_enqueue_style(
+      $name, 
+      $url,
+      $deps,
+      $version,
+      array_merge(
+        ['in_footer' => true],
+        $args
+      )
+    );
+  }
+
+  public function run()
+  {
     $this->loader->run();
   }
 }

@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Kit Widgets for Elementor
  * Description: Project that add widgets at elementor editor for confort maximus
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: Luis Saravia
  */
 
@@ -14,11 +14,25 @@ if( !did_action('elementor/loaded') ) {
 define('PLUGIN_VERSION', '1.0.0');
 define('PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
 
+if (!function_exists('is_plugin_active')) {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
+
+// Comprueba si Elementor está ACTIVO (aunque sus clases aún no estén cargadas)
+if (!is_plugin_active('elementor/elementor.php')) {
+	deactivate_plugins(plugin_basename(__FILE__));
+
+	wp_die(
+		'Este plugin requiere que Elementor esté activo. Por favor, actívalo primero.',
+		'Dependencia faltante',
+		['back_link' => true]
+	);
+}
+
 
 class World_Maps
 {
   public function __construct() {
-    // add_action( 'elementor/init', [$this, 'init']);
     $this->init();
   }
 
