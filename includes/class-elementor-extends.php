@@ -97,7 +97,7 @@ class Class_Elementor_Extends
   public function kwfe_styles_main()
   {
     $name = 'kwfe_styles_main';
-    $file_name = 'world-maps-for-elementor.css';
+    $file_name = 'kit-widgets-for-elementor.css';
     $url = $file_name;
     $path = PLUGIN_DIRECTORY . $file_name;
     $version = filemtime($path) ?? '1.0.0';
