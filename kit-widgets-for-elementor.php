@@ -1,10 +1,19 @@
 <?php
 
 /**
+ * The plugin bootstrap file
+ *
+ * Plugin created for extends Elementor widgets
+ * 
+ * @since             1.0.3
+ * @package           Kit Widgets for Elementor
+ *
+ * @wordpress-plugin
  * Plugin Name: Kit Widgets for Elementor
  * Description: Project that add widgets at elementor editor for confort maximus
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Luis Saravia
+ * Requires PHP: 8.0
  */
 
 if( !did_action('elementor/loaded') ) {

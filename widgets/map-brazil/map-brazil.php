@@ -26,11 +26,15 @@ class Map_brazil_widget extends Basic_Config_Elementor_Widget
     );
   }
 
-  public function render() {
+  public function render()
+  {
+    $path = __DIR__ . "/template/template-map-brasil.php";
+    $settings = $this->get_settings_for_display();
+    $points = $settings['map_brasil_repeater'];
 
-    $path = __DIR__ . "/template/template-map-brazil.php";
-    $template = file_get_contents($path);
-
+    ob_start();
+    require_once $path;
+    $template = ob_get_clean();
     echo $template;
   }
 

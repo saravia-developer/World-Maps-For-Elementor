@@ -26,11 +26,15 @@ class Map_argentina_widget extends Basic_Config_Elementor_Widget
     );
   }
 
-  public function render() {
-
+  public function render()
+  {
     $path = __DIR__ . "/template/template-map-argentina.php";
-    $template = file_get_contents($path);
+    $settings = $this->get_settings_for_display();
+    $points = $settings['map_argentina_repeater'];
 
+    ob_start();
+    require_once $path;
+    $template = ob_get_clean();
     echo $template;
   }
 
