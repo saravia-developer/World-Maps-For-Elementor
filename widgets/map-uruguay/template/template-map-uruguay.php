@@ -65,7 +65,7 @@
       </g>
    </svg>
    <?php
-      $path_point = PLUGIN_DIRECTORY_COMPONENTS . 'template-point.php';
+      $path_point = KWFE_DIRECTORY_COMPONENTS . 'template-point.php';
 
       foreach ($points as $point) {
          $id = $point['_id'];

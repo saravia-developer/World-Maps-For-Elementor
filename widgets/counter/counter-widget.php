@@ -1,6 +1,6 @@
 <?php
 
-require_once PLUGIN_DIRECTORY . "template/basic-widget.php";
+require_once KWFE_PLUGIN_DIRECTORY . "template/basic-widget.php";
 
 class Counter_widget extends Basic_Config_Elementor_Widget {
 

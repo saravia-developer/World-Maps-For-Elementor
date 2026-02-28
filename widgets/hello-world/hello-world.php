@@ -1,6 +1,6 @@
 <?php
 
-require_once PLUGIN_DIRECTORY . "template/basic-widget.php";
+require_once KWFE_PLUGIN_DIRECTORY . "template/basic-widget.php";
 
 class KWFE_Hello_World extends Basic_Config_Elementor_Widget {
 

@@ -31,7 +31,7 @@ class Class_Elementor_Extends
   public function kwfe_enqueue_styles()
   {
 
-    $path_widgets = PLUGIN_DIRECTORY . "widgets/";
+    $path_widgets = KWFE_PLUGIN_DIRECTORY . "widgets/";
     $styles_files = glob($path_widgets . '*/*.css');
 
     foreach ($styles_files as $style_file) {
@@ -50,7 +50,7 @@ class Class_Elementor_Extends
   public function kwfe_enqueue_scripts()
   {
 
-    $path_widgets = PLUGIN_DIRECTORY . "widgets/";
+    $path_widgets = KWFE_PLUGIN_DIRECTORY . "widgets/";
     $js_files = glob($path_widgets . '*/js/*.js');
 
     foreach ($js_files as $file) {
@@ -71,7 +71,7 @@ class Class_Elementor_Extends
 
   public function kwfe_add_categories_custom($elements_manager)
   {
-    require_once PLUGIN_DIRECTORY . "includes/widget_categories.php";
+    require_once KWFE_PLUGIN_DIRECTORY . "includes/widget_categories.php";
 
     add_categories_in_elementor(
       $elements_manager,
@@ -98,8 +98,8 @@ class Class_Elementor_Extends
   {
     $name = 'kwfe_styles_main';
     $file_name = 'kit-widgets-for-elementor.css';
-    $url = PLUGIN_DIRECTORY_URI . $file_name;
-    $path = PLUGIN_DIRECTORY . $file_name;
+    $url = KWFE_DIRECTORY_URI . $file_name;
+    $path = KWFE_PLUGIN_DIRECTORY . $file_name;
     $version = filemtime($path) ?? '1.0.0';
     $deps = [];
     $args = [];

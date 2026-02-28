@@ -20,11 +20,11 @@ if( !did_action('elementor/loaded') ) {
   return;
 }
 
-define('PLUGIN_VERSION', '1.0.0');
-define('PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
-define('PLUGIN_DIRECTORY_COMPONENTS', plugin_dir_path(__FILE__) . 'components/');
+define('KWFE_PLUGIN_VERSION', '1.0.0');
+define('KWFE_PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
+define('KWFE_DIRECTORY_COMPONENTS', KWFE_PLUGIN_DIRECTORY . 'components/');
 
-define('PLUGIN_DIRECTORY_URI', plugin_dir_url( __FILE__ ));
+define('KWFE_DIRECTORY_URI', plugin_dir_url( __FILE__ ));
 
 if (!function_exists('is_plugin_active')) {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -42,7 +42,7 @@ if (!is_plugin_active('elementor/elementor.php')) {
 }
 
 
-class World_Maps
+class Kit_Widgets_For_Elementor
 {
   public function __construct() {
     $this->init();
@@ -58,7 +58,7 @@ class World_Maps
     add_action('elementor/widgets/register', function ($widgets_manager)
     {
 
-      foreach(glob(PLUGIN_DIRECTORY . "widgets/*/*.php") as $widget) {
+      foreach(glob(KWFE_PLUGIN_DIRECTORY . "widgets/*/*.php") as $widget) {
         require_once $widget;
       };
     
@@ -85,7 +85,7 @@ class World_Maps
   public function run_elementor_extends()
   {
 
-    require_once PLUGIN_DIRECTORY . 'includes/class-elementor-extends.php';
+    require_once KWFE_PLUGIN_DIRECTORY . 'includes/class-elementor-extends.php';
 
     $plugin = new Class_Elementor_Extends();
     $plugin->run();
@@ -93,4 +93,4 @@ class World_Maps
   }
 }
 
-new World_Maps();
+new Kit_Widgets_For_Elementor();

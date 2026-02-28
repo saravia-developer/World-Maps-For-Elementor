@@ -5,7 +5,7 @@
 	version='1.2'
 	xmlns='http://www.w3.org/2000/svg'
 	class='point-map-peru'
-	style="width: 100%"
+	style="width: 100%; height: 100%;"
   >
     <g preserveAspectRatio='xMidYMid meet' transform='translate(5, 5)'>
       <circle cx='10' cy='10' r='10' fill='transparent' stroke='#699FD8' stroke-width='2' />
