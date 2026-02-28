@@ -34,4 +34,17 @@
          name="Tarija" id="BO-T" />
    </g>
    </svg>
+   <?php
+      $path_point = PLUGIN_DIRECTORY_COMPONENTS . 'template-point.php';
+
+      foreach ($points as $point) {
+      $id = $point['_id'];
+      $title = $point['map_bolivia_repeater_title'];
+      $content = $point['map_bolivia_repeater_content'];
+
+      ob_start();
+      require $path_point;
+      echo ob_get_clean();
+      }
+   ?>
 </div>

@@ -13,6 +13,7 @@ if( !did_action('elementor/loaded') ) {
 
 define('PLUGIN_VERSION', '1.0.0');
 define('PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
+define('PLUGIN_DIRECTORY_COMPONENTS', plugin_dir_path(__FILE__) . 'components/');
 
 define('PLUGIN_DIRECTORY_URI', plugin_dir_url( __FILE__ ));
 
