@@ -1,5 +1,17 @@
-:is(
-  #kwfe-widget-map-argentina,
+#kwfe-widget-map-argentina,
+#kwfe-widget-map-bolivia,
+#kwfe-widget-map-brasil,
+#kwfe-widget-map-chile,
+#kwfe-widget-map-colombia,
+#kwfe-widget-map-ecuador,
+#kwfe-widget-map-paraguay,
+#kwfe-widget-map-peru,
+#kwfe-widget-map-uruguay,
+#kwfe-widget-map-venezuela {
+  perspective: 800px;
+}
+
+:is(#kwfe-widget-map-argentina,
   #kwfe-widget-map-bolivia,
   #kwfe-widget-map-brasil,
   #kwfe-widget-map-chile,
@@ -8,14 +20,13 @@
   #kwfe-widget-map-paraguay,
   #kwfe-widget-map-peru,
   #kwfe-widget-map-uruguay,
-  #kwfe-widget-map-venezuela
-) path {
+  #kwfe-widget-map-venezuela) path[name] {
+  transform-box: fill-box;
   transition: transform .25s ease, filter .25s ease;
   transform-origin: center;
 }
 
-:is(
-  #kwfe-widget-map-argentina,
+:is(#kwfe-widget-map-argentina,
   #kwfe-widget-map-bolivia,
   #kwfe-widget-map-brasil,
   #kwfe-widget-map-chile,
@@ -24,8 +35,35 @@
   #kwfe-widget-map-paraguay,
   #kwfe-widget-map-peru,
   #kwfe-widget-map-uruguay,
-  #kwfe-widget-map-venezuela
-) path:hover {
+  #kwfe-widget-map-venezuela) path[name]:hover {
   transform: translateY(-6px) scale(1.03);
-  filter: drop-shadow(0 8px 6px rgba(0,0,0,0.25));
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.25));
+}
+
+.point-map-argentina,
+.point-map-bolivia,
+.point-map-brasil,
+.point-map-chile,
+.point-map-colombia,
+.point-map-ecuador,
+.point-map-paraguay,
+.point-map-peru,
+.point-map-uruguay,
+.point-map-venezuela {
+  position: absolute;
+}
+
+.container-message {
+  width: clamp(130px, 30vw, 500px);
+  background: skyblue;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.point-map-peru::after {
+  content: " ";
+  border-top: 5px solid skyblue;
+  border-left: 5px solid skyblue;
+  border-right: 5px solid skyblue;
+  border-bottom: 5px solid skyblue;
 }

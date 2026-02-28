@@ -120,4 +120,17 @@
       <circle class="Junín" cx="503.6" cy="603.2" id="PEJUN"></circle>
     </g>
   </svg>
+  <?php
+    $path_point = __DIR__ . "/template-point.php";
+
+    foreach ($points as $point) {
+      $id = $point['_id'];
+      $title = $point['map_peru_repeater_title'];
+      $content = $point['map_peru_repeater_content'];
+
+      ob_start();
+      require $path_point;
+      echo ob_get_clean();
+    }
+  ?> 
 </div>

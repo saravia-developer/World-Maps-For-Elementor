@@ -17,7 +17,7 @@ class Map_peru_widget extends Basic_Config_Elementor_Widget
       "Peru",
       'eicon-map',
       ['basic', 'world-maps'],
-      ['map','peru'],
+      ['map', 'peru'],
       $style_file,
       $js_files,
       $data,
@@ -26,11 +26,15 @@ class Map_peru_widget extends Basic_Config_Elementor_Widget
     );
   }
 
-  public function render() {
-
+  public function render()
+  {
     $path = __DIR__ . "/template/template-map-peru.php";
-    $template = file_get_contents($path);
-    
+    $settings = $this->get_settings_for_display();
+    $points = $settings['map_peru_repeater'];
+
+    ob_start();
+    require_once $path;
+    $template = ob_get_clean();
     echo $template;
   }
 

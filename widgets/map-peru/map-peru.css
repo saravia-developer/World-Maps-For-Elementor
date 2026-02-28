@@ -18,3 +18,53 @@
 	width: 100vw;
 	position: relative;
 }
+
+.point-map {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+}
+
+.point-map * {
+	fill: inherit !important;
+	stroke: inherit !important;
+}
+
+.point-map .container-message {
+	width: clamp(130px, 30vw, 500px);
+	background: transparent;
+	border-radius: 10px;
+	padding: 10px;
+	min-height: 180px;
+	max-height: 220px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: none;
+	transition: background .5s ease;
+}
+
+.point-map:hover .container-message {
+	display: block; 
+	background: skyblue;
+}
+
+/* Scrollbar completo */
+.point-map::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fondo del track */
+.point-map::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* La barrita que se mueve */
+.point-map::-webkit-scrollbar-thumb {
+  background: #989898;
+  border-radius: 10px;
+}
+
+/* Hover del thumb */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #4e7fb3;
+} */

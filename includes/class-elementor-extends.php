@@ -98,7 +98,7 @@ class Class_Elementor_Extends
   {
     $name = 'kwfe_styles_main';
     $file_name = 'kit-widgets-for-elementor.css';
-    $url = $file_name;
+    $url = PLUGIN_DIRECTORY_URI . $file_name;
     $path = PLUGIN_DIRECTORY . $file_name;
     $version = filemtime($path) ?? '1.0.0';
     $deps = [];

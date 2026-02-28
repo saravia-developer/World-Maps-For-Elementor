@@ -14,6 +14,8 @@ if( !did_action('elementor/loaded') ) {
 define('PLUGIN_VERSION', '1.0.0');
 define('PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
 
+define('PLUGIN_DIRECTORY_URI', plugin_dir_url( __FILE__ ));
+
 if (!function_exists('is_plugin_active')) {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 }
