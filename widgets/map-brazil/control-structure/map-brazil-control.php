@@ -70,6 +70,157 @@ return [
           ]
         ]
       ],
+      [
+        'id' => 'map_brasil_repeater',
+        'args' => [
+          'label' => esc_html__('Repeater', 'textdomain'),
+          'type' => \Elementor\Controls_Manager::REPEATER,
+          'fields' => [
+            [
+              'name' => 'map_brasil_repeater_title',
+              'label' => esc_html__('Título', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::TEXT,
+              'default' => esc_html__('Título', 'textdomain'),
+              'label_block' => true,
+            ],
+            [
+              'name' => 'map_brasil_repeater_content',
+              'label' => esc_html__('Contenido', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::WYSIWYG,
+              'default' => esc_html__('Contenido', 'textdomain'),
+              'show_label' => false,
+            ],
+            [
+              'name' => 'hr',
+              'type' => \Elementor\Controls_Manager::DIVIDER,
+            ],
+            [
+              'name' => 'map_brasil_repeater_fill',
+              'label' => esc_html__('Fill', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::COLOR,
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}}' => 'fill: {{VALUE}}'
+              ],
+            ],
+            [
+              'name' => 'map_brasil_repeater_stroke',
+              'label' => esc_html__('Stroke', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::COLOR,
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}}' => 'stroke: {{VALUE}}'
+              ],
+            ],
+            [
+              'name' => 'hr',
+              'type' => \Elementor\Controls_Manager::DIVIDER,
+            ],
+            [
+              'name' => 'map_brasil_repeater_title_color',
+              'label' => esc_html__('Title Color', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::COLOR,
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}} .container-message > h3' => 'color: {{VALUE}}'
+              ],
+            ],
+            [
+              'name' => 'map_brasil_repeater_title_size',
+              'label' => esc_html__('Title Size', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::SLIDER,
+              'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
+              'range' => [
+                'px' => [
+                  'min' => 0,
+                  'max' => 100,
+                  'step' => 5
+                ],
+                '%' => [
+                  'min' => 0,
+                  'max' => 100
+                ],
+                'vw' => [
+                  'min' => 0,
+                  'max' => 100
+                ],
+              ],
+              'default' => [
+                'unit' => 'px',
+                'size' => 22,
+              ],
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}} .container-message > h3' => 'font-size: {{SIZE}}{{UNIT}};'
+              ],
+            ],
+            [
+              'name' => 'map_brasil_repeater_background_color_container_message',
+              'label' => esc_html__('B. Color contenedor de mensaje', 'textdomain'),
+              'type' => \Elementor\Controls_Manager::COLOR,
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}} .container-message' => 'background-color: {{VALUE}}'
+              ],
+            ],
+            [
+              'name' => 'hr',
+              'type' => \Elementor\Controls_Manager::DIVIDER,
+            ],
+            [
+              'name' => 'map_brasil_repeater_position_x',
+              'type' => \Elementor\Controls_Manager::SLIDER,
+              'label' => esc_html__('Posición X', 'textdomain'),
+              'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
+              'range' => [
+                'px' => [
+                  'min' => 0,
+                  'max' => 1000,
+                  'step' => 5
+                ],
+                '%' => [
+                  'min' => 0,
+                  'max' => 100
+                ],
+                'vw' => [
+                  'min' => 0,
+                  'max' => 100
+                ],
+              ],
+              'default' => [
+                'unit' => '%',
+                'size' => 100,
+              ],
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}}' => 'left: {{SIZE}}{{UNIT}};',
+              ]
+            ],
+            [
+              'name' => 'map_brasil_repeater_position_y',
+              'type' => \Elementor\Controls_Manager::SLIDER,
+              'label' => esc_html__('Posición Y', 'textdomain'),
+              'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
+              'range' => [
+                'px' => [
+                  'min' => 0,
+                  'max' => 1000,
+                  'step' => 5
+                ],
+                '%' => [
+                  'min' => 0,
+                  'max' => 100
+                ],
+                'vw' => [
+                  'min' => 0,
+                  'max' => 100
+                ],
+              ],
+              'default' => [
+                'unit' => '%',
+                'size' => 100,
+              ],
+              'selectors' => [
+                '{{WRAPPER}} {{CURRENT_ITEM}}' => 'top: {{SIZE}}{{UNIT}};',
+              ]
+            ]
+          ]
+        ]
+      ],
     ]
   ],
   [
